@@ -1,6 +1,6 @@
 {
-  "name": "@gorules/jdm-monorepo",
-  "private": true,
+  "name": "appera-jdm-editor",
+  "private": false,
   "scripts": {
     "lerna": "lerna",
     "build": "lerna run build",
@@ -32,5 +32,5 @@
     "prettier": "^3.2.5",
     "typescript": "^5.4.5"
   },
-  "version": "0.1.0"
+  "version": "0.2.0"
 }
