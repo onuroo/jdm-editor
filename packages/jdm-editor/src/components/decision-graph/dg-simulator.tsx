@@ -23,7 +23,7 @@ export const GraphSimulator: React.FC = () => {
   const { stateStore } = useDecisionGraphRaw();
   const graphActions = useDecisionGraphActions();
   const { onSimulationRun } = useDecisionGraphListeners(({ onSimulationRun }) => ({ onSimulationRun }));
-  const { simulate, simulatorOpen, simulatorRequest, simulatorLoading, nodeTypes } = useDecisionGraphState(
+  const { simulate, simulatorOpen = true, simulatorRequest, simulatorLoading, nodeTypes } = useDecisionGraphState(
     ({ simulate, simulatorOpen, simulatorRequest, simulatorLoading, decisionGraph }) => ({
       simulate,
       simulatorOpen,

@@ -50919,7 +50919,7 @@ const ane = (e, t) => {
   const n = document.createElement("a");
   n.download = e, n.href = URL.createObjectURL(t), n.style.display = "none", document.body.appendChild(n), n.click(), n.remove();
 }, RP = async (e, t) => {
-  const n = await import("./exceljs.min-JsnRtNwa.js").then((s) => s.e), r = new n.Workbook();
+  const n = await import("./exceljs.min-BwJiZKPk.js").then((s) => s.e), r = new n.Workbook();
   t.forEach((s) => {
     let a = s.name, l = 0;
     if (r.getWorksheet(a))
@@ -51064,7 +51064,7 @@ const ane = (e, t) => {
     hitPolicy: "first"
   });
 }, MP = async (e) => {
-  const t = await import("./exceljs.min-JsnRtNwa.js").then((o) => o.e), r = await new t.Workbook().xlsx.load(e), i = [];
+  const t = await import("./exceljs.min-BwJiZKPk.js").then((o) => o.e), r = await new t.Workbook().xlsx.load(e), i = [];
   return r.eachSheet((o) => {
     const s = [], a = o.name;
     o.eachRow((u) => {
@@ -77716,7 +77716,7 @@ var ode = { exports: {} };
   }();
 })(ode);
 const sde = () => {
-  const { token: e } = no.useToken(), { stateStore: t } = JC(), n = Lr(), { onSimulationRun: r } = ZC(({ onSimulationRun: p }) => ({ onSimulationRun: p })), { simulate: i, simulatorOpen: o, simulatorRequest: s, simulatorLoading: a, nodeTypes: l } = Nr(
+  const { token: e } = no.useToken(), { stateStore: t } = JC(), n = Lr(), { onSimulationRun: r } = ZC(({ onSimulationRun: p }) => ({ onSimulationRun: p })), { simulate: i, simulatorOpen: o = !0, simulatorRequest: s, simulatorLoading: a, nodeTypes: l } = Nr(
     ({ simulate: p, simulatorOpen: g, simulatorRequest: m, simulatorLoading: v, decisionGraph: b }) => ({
       simulate: p,
       simulatorOpen: g,
@@ -80141,7 +80141,7 @@ const Ide = () => U.useContext(eS), kde = ({
       manager: t
     }
   ) });
-}, Bde = U.lazy(async () => ({ default: (await import("./index-dG4TVLta.js")).Function })), jde = ({ id: e }) => {
+}, Bde = U.lazy(async () => ({ default: (await import("./index-CgAo2xyZ.js")).Function })), jde = ({ id: e }) => {
   const t = Lr(), { nodeTrace: n, disabled: r, content: i } = Nr(
     ({ simulate: o, disabled: s, configurable: a, decisionGraph: l }) => {
       var u;
