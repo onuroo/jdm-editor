@@ -106,6 +106,7 @@ export declare const DecisionGraph: default_2.ForwardRefExoticComponent<{
     manager?: DragDropManager | undefined;
 } & DecisionGraphWrapperProps & DecisionGraphEmptyType & default_2.RefAttributes<{
     setDecisionGraph: (val: DecisionGraphType) => void;
+    exportJSON: () => JSONExportType | null;
     handleNodesChange: (nodesChange: NodeChange[]) => void;
     handleEdgesChange: (edgesChange: EdgeChange[]) => void;
     setNodes: (nodes: DecisionNode<any>[]) => void;
@@ -171,6 +172,7 @@ declare type DecisionGraphStoreType = {
     };
     actions: {
         setDecisionGraph: (val: DecisionGraphType) => void;
+        exportJSON: () => JSONExportType | null;
         handleNodesChange: (nodesChange: NodeChange[]) => void;
         handleEdgesChange: (edgesChange: EdgeChange[]) => void;
         setNodes: (nodes: DecisionNode[]) => void;
@@ -353,6 +355,12 @@ export declare type JdmConfigProviderProps = {
     theme?: ThemeConfig;
     prefixCls?: string;
     children?: default_2.ReactNode;
+};
+
+declare type JSONExportType = {
+    contentType: string;
+    nodes: object;
+    edges: object;
 };
 
 declare type Menu = 'components';
@@ -574,6 +582,7 @@ export declare function useDecisionGraphRaw(): {
     }>;
     actions: {
         setDecisionGraph: (val: DecisionGraphType) => void;
+        exportJSON: () => JSONExportType | null;
         handleNodesChange: (nodesChange: NodeChange[]) => void;
         handleEdgesChange: (edgesChange: EdgeChange[]) => void;
         setNodes: (nodes: DecisionNode<any>[]) => void;

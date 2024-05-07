@@ -14,6 +14,8 @@ import type { CustomNodeSpecification } from '../nodes/custom-node/index';
 import { NodeKind, type NodeSpecification } from '../nodes/specifications/specification-types';
 import type { Simulation } from '../types/simulation.types';
 
+const DecisionContentType = 'application/vnd.gorules.decision';
+
 export type Position = {
   x: number;
   y: number;
@@ -48,6 +50,12 @@ export type CustomNodeRenderFormType = {
   onChange: (val: any) => void;
 };
 
+export type JSONExportType = {
+  contentType: string,
+  nodes: object
+  edges: object,
+}
+
 type DraftUpdateCallback<T> = (draft: WritableDraft<T>) => WritableDraft<T>;
 
 export type DecisionGraphStoreType = {
@@ -77,6 +85,7 @@ export type DecisionGraphStoreType = {
 
   actions: {
     setDecisionGraph: (val: DecisionGraphType) => void;
+    exportJSON: () => JSONExportType | null;
 
     handleNodesChange: (nodesChange: NodeChange[]) => void;
     handleEdgesChange: (edgesChange: EdgeChange[]) => void;
@@ -173,6 +182,20 @@ export const DecisionGraphProvider: React.FC<React.PropsWithChildren<DecisionGra
 
   const actions = useMemo<DecisionGraphStoreType['actions']>(
     () => ({
+      exportJSON: () => {
+        try {
+          const { decisionGraph } = stateStore.getState();
+          const value: JSONExportType = {
+            contentType: DecisionContentType,
+            nodes: decisionGraph.nodes,
+            edges: decisionGraph.edges,
+          };
+          return value;
+
+        } catch (e: any) {
+          return null;
+        }
+      },
       handleNodesChange: (changes = []) => {
         const { decisionGraph } = stateStore.getState();
         const { nodesState } = referenceStore.getState();

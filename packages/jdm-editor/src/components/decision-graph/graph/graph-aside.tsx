@@ -206,7 +206,8 @@ export const GraphAside: React.FC<GraphAsideProps> = ({ defaultOpenMenu = 'compo
           (event.target as any).value = null;
         }}
       />
-      <div className={'grl-dg__aside__side-bar'}>
+      {/* Components BAR */}
+      {/* <div className={'grl-dg__aside__side-bar'}>
         <div className={'grl-dg__aside__side-bar__top'}>
           <Tooltip placement='right' title='Components'>
             <Button
@@ -236,7 +237,7 @@ export const GraphAside: React.FC<GraphAsideProps> = ({ defaultOpenMenu = 'compo
             </Tooltip>
           )}
         </div>
-      </div>
+      </div> */}
       {menu && (
         <div className={'grl-dg__aside__menu'}>
           {menu === 'components' && (
@@ -247,7 +248,7 @@ export const GraphAside: React.FC<GraphAsideProps> = ({ defaultOpenMenu = 'compo
                     Components
                   </Typography.Text>
                 </div>
-                <Button type={'text'} size='small' icon={<CloseOutlined />} onClick={() => setMenu(false)}></Button>
+                {/* <Button type={'text'} size='small' icon={<CloseOutlined />} onClick={() => setMenu(false)}></Button> */}
               </div>
               <div className={'grl-dg__aside__menu__content'}>
                 <GraphComponents inputDisabled={hasInputNode} disabled={!!activeNodeId || disabled} />

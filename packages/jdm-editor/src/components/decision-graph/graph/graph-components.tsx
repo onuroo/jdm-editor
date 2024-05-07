@@ -93,13 +93,13 @@ export const GraphComponents: React.FC<GraphComponentsProps> = React.memo(({ inp
 
   return (
     <div>
-      <Input
+      {/* <Input
         placeholder={'Type to search'}
         value={search}
         onChange={(e) => setSearch(e.target.value || '')}
         allowClear
         className={'grl-dg__aside__menu__components__search'}
-      />
+      /> */}
       <div className={'grl-dg__aside__menu__components'}>
         {Object.keys(groups).map((group) => {
           return match(group)
