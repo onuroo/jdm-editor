@@ -56,6 +56,10 @@ export type JSONExportType = {
   edges: object,
 }
 
+declare type GetInputType = {
+  input: string;
+};
+
 type DraftUpdateCallback<T> = (draft: WritableDraft<T>) => WritableDraft<T>;
 
 export type DecisionGraphStoreType = {
@@ -86,7 +90,8 @@ export type DecisionGraphStoreType = {
   actions: {
     setDecisionGraph: (val: DecisionGraphType) => void;
     exportJSON: () => JSONExportType | null;
-
+    getInput: () => GetInputType | null;
+    
     handleNodesChange: (nodesChange: NodeChange[]) => void;
     handleEdgesChange: (edgesChange: EdgeChange[]) => void;
 
@@ -182,6 +187,18 @@ export const DecisionGraphProvider: React.FC<React.PropsWithChildren<DecisionGra
 
   const actions = useMemo<DecisionGraphStoreType['actions']>(
     () => ({
+      getInput: () => {
+        try {
+          const { simulatorRequest } = stateStore.getState();
+          const value: GetInputType = {
+            input: simulatorRequest || '',
+          };
+          return value;
+
+        } catch (e: any) {
+          return null;
+        }
+      },
       exportJSON: () => {
         try {
           const { decisionGraph } = stateStore.getState();

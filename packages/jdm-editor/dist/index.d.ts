@@ -107,6 +107,7 @@ export declare const DecisionGraph: default_2.ForwardRefExoticComponent<{
 } & DecisionGraphWrapperProps & DecisionGraphEmptyType & default_2.RefAttributes<{
     setDecisionGraph: (val: DecisionGraphType) => void;
     exportJSON: () => JSONExportType | null;
+    getInput: () => GetInputType | null;
     handleNodesChange: (nodesChange: NodeChange[]) => void;
     handleEdgesChange: (edgesChange: EdgeChange[]) => void;
     setNodes: (nodes: DecisionNode<any>[]) => void;
@@ -173,6 +174,7 @@ declare type DecisionGraphStoreType = {
     actions: {
         setDecisionGraph: (val: DecisionGraphType) => void;
         exportJSON: () => JSONExportType | null;
+        getInput: () => GetInputType | null;
         handleNodesChange: (nodesChange: NodeChange[]) => void;
         handleEdgesChange: (edgesChange: EdgeChange[]) => void;
         setNodes: (nodes: DecisionNode[]) => void;
@@ -361,6 +363,10 @@ declare type JSONExportType = {
     contentType: string;
     nodes: object;
     edges: object;
+};
+
+declare type GetInputType = {
+  input: string;
 };
 
 declare type Menu = 'components';
@@ -583,6 +589,7 @@ export declare function useDecisionGraphRaw(): {
     actions: {
         setDecisionGraph: (val: DecisionGraphType) => void;
         exportJSON: () => JSONExportType | null;
+        getInput: () => GetInputType | null;
         handleNodesChange: (nodesChange: NodeChange[]) => void;
         handleEdgesChange: (edgesChange: EdgeChange[]) => void;
         setNodes: (nodes: DecisionNode<any>[]) => void;
