@@ -23,7 +23,7 @@
     width: 100%;
     border-top: 1px solid var(--grl-color-border);
     display: flex;
-    height: 300px;
+    height: 37vh;
     background: var(--grl-color-primary-bg-fade);
 
     &__nodes-list {
@@ -110,15 +110,15 @@
     }
 
     &__request {
-      width: 300px;
+      width: 40%;
     }
 
     &__nodes {
-      width: 260px;
+      width: 20%;
     }
 
     &__response {
-      min-width: 300px;
+      min-width: 40%;
       flex: 1;
     }
   }

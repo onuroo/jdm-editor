@@ -187,7 +187,7 @@ export const GraphSimulator: React.FC = () => {
       <div className={'grl-dg__simulator__section grl-dg__simulator__response'}>
         <div className={'grl-dg__simulator__section__bar grl-dg__simulator__section__bar--response'}>
           <Typography.Text>Response</Typography.Text>
-          <div className={'grl-dg__simulator__section__bar__actions'}>
+          {/* <div className={'grl-dg__simulator__section__bar__actions'}>
             <Tooltip title={'Close panel'}>
               <Button
                 size={'small'}
@@ -196,7 +196,7 @@ export const GraphSimulator: React.FC = () => {
                 onClick={() => graphActions.toggleSimulator()}
               />
             </Tooltip>
-          </div>
+          </div> */}
         </div>
         <div className={'grl-dg__simulator__section__content'}>
           <ReactAce
