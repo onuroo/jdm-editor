@@ -107,7 +107,9 @@ export declare const DecisionGraph: default_2.ForwardRefExoticComponent<{
 } & DecisionGraphWrapperProps & DecisionGraphEmptyType & default_2.RefAttributes<{
     setDecisionGraph: (val: DecisionGraphType) => void;
     exportJSON: () => JSONExportType | null;
-    getInput: () => GetInputType | null;
+    getInput: () => {
+        input: string;
+    } | null;
     handleNodesChange: (nodesChange: NodeChange[]) => void;
     handleEdgesChange: (edgesChange: EdgeChange[]) => void;
     setNodes: (nodes: DecisionNode<any>[]) => void;
@@ -319,6 +321,10 @@ declare type GenerateNodeParams_2 = {
     index: number;
 };
 
+declare type GetInputType = {
+    input: string;
+};
+
 declare type GraphAsideProps = {
     defaultOpenMenu?: Menu | false;
 };
@@ -363,10 +369,6 @@ declare type JSONExportType = {
     contentType: string;
     nodes: object;
     edges: object;
-};
-
-declare type GetInputType = {
-  input: string;
 };
 
 declare type Menu = 'components';

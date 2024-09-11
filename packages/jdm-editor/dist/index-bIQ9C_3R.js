@@ -50898,7 +50898,7 @@ const qte = (e, t) => {
   const n = document.createElement("a");
   n.download = e, n.href = URL.createObjectURL(t), n.style.display = "none", document.body.appendChild(n), n.click(), n.remove();
 }, Qte = async (e, t) => {
-  const n = await import("./exceljs.min-juiCVNpt.js").then((s) => s.e), r = new n.Workbook();
+  const n = await import("./exceljs.min-Dmthz4y0.js").then((s) => s.e), r = new n.Workbook();
   t.forEach((s) => {
     let a = s.name, l = 0;
     if (r.getWorksheet(a))
@@ -51043,7 +51043,7 @@ const qte = (e, t) => {
     hitPolicy: "first"
   });
 }, AP = async (e) => {
-  const t = await import("./exceljs.min-juiCVNpt.js").then((o) => o.e), r = await new t.Workbook().xlsx.load(e), i = [];
+  const t = await import("./exceljs.min-Dmthz4y0.js").then((o) => o.e), r = await new t.Workbook().xlsx.load(e), i = [];
   return r.eachSheet((o) => {
     const s = [], a = o.name;
     o.eachRow((u) => {
@@ -75438,6 +75438,16 @@ const Hue = (e) => ({
     []
   ), o = mt(
     () => ({
+      getInput: () => {
+        try {
+          const { simulatorRequest: s } = n.getState();
+          return {
+            input: s || ""
+          };
+        } catch {
+          return null;
+        }
+      },
       exportJSON: () => {
         try {
           const { decisionGraph: s } = n.getState();
@@ -80043,7 +80053,7 @@ const $de = () => U.useContext(JC), Ode = ({
       manager: t
     }
   ) });
-}, Rde = U.lazy(async () => ({ default: (await import("./index-bfVImhSd.js")).Function })), Mde = ({ id: e }) => {
+}, Rde = U.lazy(async () => ({ default: (await import("./index-C6fScKZ1.js")).Function })), Mde = ({ id: e }) => {
   const t = Nr(), { nodeTrace: n, disabled: r, content: i } = Pr(
     ({ simulate: o, disabled: s, configurable: a, decisionGraph: l }) => {
       var u;
